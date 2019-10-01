@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  # devise_for :user
   root 'welcome#index'
+
   namespace 'api' do
     namespace 'v1' do
+      get 'users/all_users'
       mount_devise_token_auth_for 'User', at: 'auth'
     end
   end
